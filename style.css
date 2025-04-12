@@ -1,0 +1,460 @@
+/* Общие стили */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#gallery img:hover {
+  transform: scale(1.03);
+}
+
+/* Стили модального окна */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.95);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.modal-content {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+}
+
+.close, .prev, .next {
+  position: absolute;
+  top: 50%;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+  transform: translateY(-50%);
+}
+
+.close {
+  top: 20px;
+  right: 30px;
+  font-size: 35px;
+}
+
+.prev {
+  left: 30px;
+}
+
+.next {
+  right: 30px;
+}
+
+body {
+  background-color: #1a1a1a;
+  background-image: 
+    linear-gradient(to bottom right, #1a1a1a, #555), /* Более тёмный градиент */
+    url('текстура');
+  background-repeat: repeat;
+  background-size: auto;
+  color: #d3d3d3;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* Контейнер для всех секций */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+/* Главный экран */
+header {
+  background-image: url('texture.jpg'); linear-gradient(135deg, #444, #555); /* Темно-серый с переливом */
+  color: white;
+  text-align: center;
+  padding: 80px 0;
+}
+
+header h1 {
+  font-size: 5rem;
+  font-weight: 600;
+}
+
+header span {
+  color: #f7d400; /* Желтый цвет */
+}
+
+header p {
+  font-size: 1.7rem;
+  margin: 20px 0;
+}
+
+header .btn {
+  padding: 12px 25px;
+  background-color: #f7d400; /* Ярко-желтая кнопка */
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 30px;
+  transition: 0.3s;
+}
+
+header .btn:hover {
+  background-color: #444;
+  color: white;
+}
+
+/* Секции */
+.section {
+  padding: 60px 0;
+  text-align: center;
+}
+
+.bg-light {
+  background-color: #333; /* Темно-серый фон для светлых секций */
+}
+
+.bg-dark {
+  background-color: #111; /* Очень темный фон */
+  color: white;
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px; /* Меньший отступ снизу у заголовка */
+  color: #f7d400; /* Желтый цвет заголовков */
+  font-weight: bold; /* Толстый шрифт для заголовков */
+}
+
+p {
+  font-size: 1.7rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #d3d3d3;
+  font-weight: 300; /* Тонкий шрифт для текста */
+}
+
+ul {
+  list-style: none;
+  margin-top: 20px;
+}
+
+ul li {
+  font-size: 1.1rem;
+  margin: 10px 0;
+}
+
+/* Портфолио */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+#portfolio h2 {
+  margin-bottom: 40px;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  object-fit: none; /* Показывает картинку полностью без обрезки во весь экран */
+  border-bottom: none; /* Убираем рамки */
+}
+
+.card:hover {
+  transform: translateY(-10px); /* Легкое поднятие карточек при наведении */
+position: relative; /* Устанавливаем относительное позиционирование */
+  transition: transform 0.7s ease; /* Плавный переход */
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-bottom: 3px solid #f7d400; /* Желтая линия под изображением */
+}
+
+.card p {
+  padding: 15px;
+  font-size: 1rem;
+  color: #f7d400; /* Желтый текст в карточках */
+}
+
+/* Стили для фото в разделе "Обо мне" */
+.about-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  gap: 30px;
+}
+
+.about-photo {
+  width: 400px; /* Размер фото */
+  height: 400px;
+  border-radius: 50%; /* Квадратная форма фото */
+  object-fit: cover; /* Обеспечивает, чтобы фото хорошо вписывалось в круг */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Тень вокруг фото для объемности */
+
+}
+
+/* Позиционирование */
+   position: relative;
+   top: 20px; /* Спускаем фото на 20px */
+}
+
+.about-content p {
+  font-size: 1.2rem;
+  color: #d3d3d3; /* Светло-серый текст */
+  font-weight: 300; /* Тонкий шрифт */
+  max-width: 600px; /* Ограничиваем максимальную ширину для текста */
+}
+
+.about-section {
+  position: relative;
+  background-image: url('your-background-image.jpg'); /* Изображение фона */
+  background-size: cover; /* Покрытие всего фона */
+  background-position: center;
+  padding: 60px 50px;
+}
+
+.about-section .container {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.3); /* Белый с полупрозрачностью */
+  backdrop-filter: blur(5px); /* Эффект размытия для фона */
+  border-radius: 15px; /* Закругленные углы */
+  padding: 30px;
+  color: #333; /* Цвет текста */
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about-section h2 {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.about-section p {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.95);
+  text-align: center;
+}
+
+.modal-content {
+  margin: auto;
+  max-width: 90%;
+  max-height: 80%;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+#modal-caption {
+  color: #ccc;
+  margin-top: 15px;
+  font-size: 16px;
+}
+
+.close, .prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+  padding: 10px;
+}
+
+.close {
+  top: 20px;
+  right: 40px;
+  font-size: 35px;
+  transform: none;
+}
+
+.prev {
+  left: 30px;
+}
+
+.next {
+  right: 30px;
+}
+
+/* Услуги */
+#services {
+  background-color: #333; /* Темный фон для секции услуг */
+}
+
+#services h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #f7d400; /* Желтые заголовки */
+}
+
+#services ul li {
+  font-size: 1.1rem;
+  color: #d3d3d3;
+  margin: 10px 0;
+}
+
+/* Контакты и Подвал */
+footer {
+  background-color: #111; /* Очень темный фон подвала */
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+footer a {
+  color: #f7d400; /* Желтые ссылки */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #1e1e1e;
+  padding: 30px;
+  border-radius: 15px;
+  max-width: 500px;
+  width: 90%;
+  color: #f7d400;
+  position: relative;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px; right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #f7d400;
+}
+
+.order-form input,
+.order-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  background-color: #2c2c2c;
+  border: 1px solid #555;
+  color: #fff;
+  border-radius: 8px;
+}
+
+.order-form button {
+  background-color: #f7d400;
+  color: #111;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.order-form button:hover {
+  background-color: #fff100;
+}
+
+/* Убираем рамки у изображений в галерее */
+#gallery img {
+  width: 100%;
+  height: auto;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+#gallery img:hover {
+  transform: scale(1.03);
+}
+
+/* Стили модального окна */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.95);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.modal-content {
+  max-width: 90vw;
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  border-radius: 10px;
+}
+
+.close, .prev, .next {
+  position: absolute;
+  top: 50%;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+  transform: translateY(-50%);
+}
+
+.close {
+  top: 20px;
+  right: 30px;
+  font-size: 35px;
+}
+
+.prev {
+  left: 30px;
+}
+
+.next {
+  right: 30px;
+}
